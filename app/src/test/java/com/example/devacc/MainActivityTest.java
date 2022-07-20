@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
@@ -18,6 +19,11 @@ import org.robolectric.RobolectricTestRunner;
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
     public static final double MIN_CONSTRAST_RATIO = 4.5;
+
+    @BeforeClass
+    public static void beforeClass()
+    {
+    }
 
     @Test
     public void deve_UtilizarTaxaDeContrasteAdequada_Roboletric() {
@@ -42,5 +48,12 @@ public class MainActivityTest {
                 assertThat(ratio, greaterThan(MIN_CONSTRAST_RATIO));
             }
         }
+    }
+
+    @Test
+    public void deve_UtilizarTaxaDeContrasteAdequada_AccessibilityChecks(){
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        View view = activity.findViewById(R.id.text_label);
+        view.performClick();
     }
 }

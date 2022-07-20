@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.test.espresso:espresso-accessibility:3.4.0'
+    implementation 'com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:2.1'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.robolectric:robolectric:4.8'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
